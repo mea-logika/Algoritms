@@ -1,7 +1,7 @@
 #include "TXLib.h"
 
-typedef unsigned long long THesh (const char Str[], int LenStr, int Bits = 4);
-typedef void TSkip (unsigned long long* Value, char CharOut, char CharAdd, int Bits = 4, unsigned long long HideSeek = 0);
+typedef unsigned long long THesh (const char Str[], int LenStr, int Bits );
+typedef void TSkip (unsigned long long* Value, char CharOut, char CharAdd, int Bits , unsigned long long HideSeek = 0);
 
 THesh HeshSumm;
 THesh HeshSS;
@@ -13,15 +13,15 @@ int RunTest  (THesh*, TSkip*, int Bits = 4);
 int LenS (const char Str[]);
 bool IsFind  (const char Ps[], const char Str[], int start);
 
-int StrInStr (THesh*, TSkip*, const char Ps[], const char Str[], int Bits = 4);
+int StrInStr (THesh*, TSkip*, const char Ps[], const char Str[], int Bits );
 
 unsigned long long Maska (int len);
 
 int main()
     {
-    int Bits = 8; // количество значимых последних бит одного символа
-    $(Maska(63));
-    $(Maska(64));
+
+    int Bits = 3; // количество значимых последних бит одного символа
+    //$(HeshSS("ABC",3, Bits));
     RunTest (&HeshSS, &SkipHeshSS, Bits);
     }
 
@@ -63,13 +63,12 @@ int StrInStr(THesh* Hesh, TSkip* Skip, const char Ps[], const char Str[], int Bi
     unsigned long long HeshPs = (*Hesh) (Ps, LenPs, Bits);
     unsigned long long HeshInclude = (*Hesh) (Str, LenPs, Bits);
     unsigned long long Hide = Maska (LenPs * Bits);
-    $(Hide);
 
     while (start <= LenStr - LenPs)
         {
         if (HeshPs == HeshInclude)
             {
-            if (IsFind(Ps, Str, start)) return start;
+            if (IsFind (Ps, Str, start)) return start;
                 else ;
             }
         else
@@ -88,6 +87,7 @@ unsigned long long HeshSS (const char Str[], int LenStr, int Bits)
     {
     int result = 0;
     int i = 0;
+
     while ((Str[i] != '\0') && (i<LenStr))
         {
         result = (result << Bits) + (Str[i] & Maska (Bits));
@@ -119,7 +119,7 @@ bool IsFind(const char Ps[], const char Str[], int start)
 // Тест работы функции
 int RunTest (THesh* Hesh, TSkip* Skip, int Bits)
     {
-    /*
+
     $unittest (StrInStr(Hesh, Skip, "", "abc", Bits),      0);
 
     $unittest (StrInStr(Hesh, Skip,"a", "abc", Bits),     0);
@@ -140,7 +140,7 @@ int RunTest (THesh* Hesh, TSkip* Skip, int Bits)
     $unittest (StrInStr(Hesh, Skip,"9","1234567890", Bits),  8);
     $unittest (StrInStr(Hesh, Skip,"90","1234567890", Bits),  8);
     $unittest (StrInStr(Hesh, Skip,"901","1234567890", Bits),  -1);
-    */
+
     $unittest (StrInStr(Hesh, Skip,"1234567890","12341234567890", Bits),  4);
 
     }
