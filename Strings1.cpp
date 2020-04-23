@@ -9,7 +9,7 @@ THesh HeshSS;
 TSkip SkipHeshSumm;
 TSkip SkipHeshSS;
 
-int RunTest  (THesh*, TSkip*, int Bits = 4);
+int RunTest  (THesh*, TSkip*, int Bits);
 int LenS (const char Str[]);
 bool IsFind  (const char Ps[], const char Str[], int start);
 
@@ -62,6 +62,7 @@ int StrInStr(THesh* Hesh, TSkip* Skip, const char Ps[], const char Str[], int Bi
 
     unsigned long long HeshPs = (*Hesh) (Ps, LenPs, Bits);
     unsigned long long HeshInclude = (*Hesh) (Str, LenPs, Bits);
+    $(LenPs*Bits);
     unsigned long long Hide = Maska (LenPs * Bits);
 
     while (start <= LenStr - LenPs)
@@ -141,7 +142,7 @@ int RunTest (THesh* Hesh, TSkip* Skip, int Bits)
     $unittest (StrInStr(Hesh, Skip,"90","1234567890", Bits),  8);
     $unittest (StrInStr(Hesh, Skip,"901","1234567890", Bits),  -1);
 
-    $unittest (StrInStr(Hesh, Skip,"1234567890","12341234567890", Bits),  4);
+    $unittest (StrInStr(Hesh, Skip,"1234567890","123412345678902", Bits),  4);
 
     }
 

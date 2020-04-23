@@ -1,7 +1,7 @@
 #include "TXLib.h"
 
-typedef unsigned long long THesh (const char Str[], int LenStr, int Bits = 4);
-typedef void TSkip (unsigned long long* Value, char CharOut, char CharAdd, int Bits = 4, unsigned long long HideSeek = 0);
+typedef unsigned long long THesh (const char Str[], int LenStr, int Bits );
+typedef void TSkip (unsigned long long* Value, char CharOut, char CharAdd, int Bits , unsigned long long HideSeek = 0);
 
 THesh HeshSumm;
 THesh HeshSS;
@@ -9,17 +9,19 @@ THesh HeshSS;
 TSkip SkipHeshSumm;
 TSkip SkipHeshSS;
 
-int RunTest  (THesh*, TSkip*, int Bits = 4);
+int RunTest  (THesh*, TSkip*, int Bits);
 int LenS (const char Str[]);
 bool IsFind  (const char Ps[], const char Str[], int start);
 
-int StrInStr (THesh*, TSkip*, const char Ps[], const char Str[], int Bits = 4);
+int StrInStr (THesh*, TSkip*, const char Ps[], const char Str[], int Bits );
 
 unsigned long long Maska (int len);
 
 int main()
     {
-    int Bits = 4; // количество значимых последних бит одного символа
+
+    int Bits = 8; // количество значимых последних бит одного символа
+    //$(HeshSS("ABC",3, Bits));
     RunTest (&HeshSS, &SkipHeshSS, Bits);
     }
 
@@ -85,6 +87,7 @@ unsigned long long HeshSS (const char Str[], int LenStr, int Bits)
     {
     int result = 0;
     int i = 0;
+
     while ((Str[i] != '\0') && (i<LenStr))
         {
         result = (result << Bits) + (Str[i] & Maska (Bits));
