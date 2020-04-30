@@ -9,7 +9,7 @@ THesh HeshSS;
 TSkip SkipHeshSumm;
 TSkip SkipHeshSS;
 
-int RunTest  (THesh*, TSkip*, int Bits);
+void RunTest  (THesh*, TSkip*, int Bits);
 int LenS (const char Str[]);
 bool IsFind  (const char Ps[], const char Str[], int start);
 
@@ -20,7 +20,7 @@ unsigned long long Maska (int len);
 int main()
     {
 
-    int Bits = 8; // количество значимых последних бит одного символа
+    int Bits = 4; // количество значимых последних бит одного символа
     //$(HeshSS("ABC",3, Bits));
     RunTest (&HeshSS, &SkipHeshSS, Bits);
     }
@@ -62,6 +62,7 @@ int StrInStr(THesh* Hesh, TSkip* Skip, const char Ps[], const char Str[], int Bi
 
     unsigned long long HeshPs = (*Hesh) (Ps, LenPs, Bits);
     unsigned long long HeshInclude = (*Hesh) (Str, LenPs, Bits);
+    $(LenPs*Bits);
     unsigned long long Hide = Maska (LenPs * Bits);
 
     while (start <= LenStr - LenPs)
@@ -69,7 +70,7 @@ int StrInStr(THesh* Hesh, TSkip* Skip, const char Ps[], const char Str[], int Bi
         if (HeshPs == HeshInclude)
             {
             if (IsFind (Ps, Str, start)) return start;
-                else ;
+
             }
         else
             {
@@ -85,7 +86,7 @@ int StrInStr(THesh* Hesh, TSkip* Skip, const char Ps[], const char Str[], int Bi
 // Определение хэш значения строки. Аналог Систем счисления.
 unsigned long long HeshSS (const char Str[], int LenStr, int Bits)
     {
-    int result = 0;
+    unsigned long long result = 0;
     int i = 0;
 
     while ((Str[i] != '\0') && (i<LenStr))
@@ -117,7 +118,7 @@ bool IsFind(const char Ps[], const char Str[], int start)
     }
 
 // Тест работы функции
-int RunTest (THesh* Hesh, TSkip* Skip, int Bits)
+void RunTest (THesh* Hesh, TSkip* Skip, int Bits)
     {
 
     $unittest (StrInStr(Hesh, Skip, "", "abc", Bits),      0);
@@ -141,6 +142,7 @@ int RunTest (THesh* Hesh, TSkip* Skip, int Bits)
     $unittest (StrInStr(Hesh, Skip,"90","1234567890", Bits),  8);
     $unittest (StrInStr(Hesh, Skip,"901","1234567890", Bits),  -1);
 
+    $unittest (StrInStr(Hesh, Skip,"123456789","12341234567892", Bits),  4);
     $unittest (StrInStr(Hesh, Skip,"1234567890","123412345678902", Bits),  4);
 
     }
@@ -148,8 +150,10 @@ int RunTest (THesh* Hesh, TSkip* Skip, int Bits)
 // Заполняет последние len битов 1
 unsigned long long Maska (int len)
     {
-    if (len < 64) return (1 << len) - 1;
-        else return (((1 << 63) - 1) << 1) + 1;
+        
+        
+    if (len < 64) return (  1LLU << len) - 1;
+        else      return ( ~0LLU );
     }
 
 // Длина строки
