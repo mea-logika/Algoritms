@@ -1,0 +1,522 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B8B9 в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 49. Попытка прочесть данные по адресу 0xFFD1CF7B. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005072F4 (32-bit), Flags: Cmdre0, Thread: 0x3E24 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B8B9 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (49):
+
+     47: 
+     48:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+=>   49:             if (Ps[i] == Str [last - i])
+     50:                 i--;
+     51:             else
+
+# 1 0x0042B93E in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (106):
+
+    104:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    105: */
+=>  106:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    107:     $unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    108:     }
+
+# 2 0x0042B71C in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (13):
+
+     11: 
+     12: 
+=>   13:     RunTest ();
+     14:     }
+     15: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int StrInStr(const char*, const char*) at C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp (48):
+
+     46:         {
+     47: 
+=>   48:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+     49:             if (Ps[i] == Str [last - i])
+     50:                 i--;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 17:47:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 17:47:46
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B8B9 в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 49. Попытка прочесть данные по адресу 0xFFD1CF7B. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005072F4 (32-bit), Flags: Cmdre0, Thread: 0x3E24 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B8B9 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (49):
+
+     47: 
+     48:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+=>   49:             if (Ps[i] == Str [last - i])
+     50:                 i--;
+     51:             else
+
+# 1 0x0042B93E in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (106):
+
+    104:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    105: */
+=>  106:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    107:     $unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    108:     }
+
+# 2 0x0042B71C in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (13):
+
+     11: 
+     12: 
+=>   13:     RunTest ();
+     14:     }
+     15: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int StrInStr(const char*, const char*) at C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp (48):
+
+     46:         {
+     47: 
+=>   48:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+     49:             if (Ps[i] == Str [last - i])
+     50:                 i--;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 17:47:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 17:47:47
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B8BF в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 50. Попытка прочесть данные по адресу 0xFD4CCC7C. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005072F4 (32-bit), Flags: Cmdre0, Thread: 0x238C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B8BF in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (50):
+
+     48: 
+     49:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+=>   50:             if (Ps[i] == Str [last - i])
+     51:             {
+     52:                 $DO(i--);
+
+# 1 0x0042BA4C in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (110):
+
+    108:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    109: */
+=>  110:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    111:     $unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    112:     }
+
+# 2 0x0042B71C in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (13):
+
+     11: 
+     12: 
+=>   13:     RunTest ();
+     14:     }
+     15: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int StrInStr(const char*, const char*) at C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp (49):
+
+     47:         {
+     48: 
+=>   49:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+     50:             if (Ps[i] == Str [last - i])
+     51:             {
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 18:08:14, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 18:08:24
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B8BF в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 50. Попытка прочесть данные по адресу 0xFD4CCC7C. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005072F4 (32-bit), Flags: Cmdre0, Thread: 0x238C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B8BF in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (50):
+
+     48: 
+     49:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+=>   50:             if (Ps[i] == Str [last - i])
+     51:             {
+     52:                 $DO(i--);
+
+# 1 0x0042BA4C in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (110):
+
+    108:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    109: */
+=>  110:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    111:     $unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    112:     }
+
+# 2 0x0042B71C in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (13):
+
+     11: 
+     12: 
+=>   13:     RunTest ();
+     14:     }
+     15: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int StrInStr(const char*, const char*) at C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp (49):
+
+     47:         {
+     48: 
+=>   49:             while (!(txGetAsyncKeyState (VK_ESCAPE)));
+     50:             if (Ps[i] == Str [last - i])
+     51:             {
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 18:08:14, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 18:08:23
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B78E в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 62. Попытка прочесть данные по адресу 0x898ACD1F. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0xF90 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B78E in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (62):
+
+     60:             while (!(txGetAsyncKeyState (VK_ESCAPE))) {};
+     61: 
+=>   62:             if (Ps[i] == Str [last - i])
+     63:             {
+     64: 
+
+# 1 0x0042B813 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (116):
+
+    114:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    115: */
+=>  116:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    117:     //$unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    118:     }
+
+# 2 0x0042B608 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (15):
+
+     13: 
+     14: 
+=>   15:     RunTest ();
+     16:     }
+     17: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int StrInStr(const char*, const char*) at C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp (60):
+
+     58:             cout << Ps << "\n";
+     59: 
+=>   60:             while (!(txGetAsyncKeyState (VK_ESCAPE))) {};
+     61: 
+     62:             if (Ps[i] == Str [last - i])
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 18:54:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 18:54:10
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B78E в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 62. Попытка прочесть данные по адресу 0x898ACD1F. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0xF90 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B78E in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (62):
+
+     60:             while (!(txGetAsyncKeyState (VK_ESCAPE))) {};
+     61: 
+=>   62:             if (Ps[i] == Str [last - i])
+     63:             {
+     64: 
+
+# 1 0x0042B813 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (116):
+
+    114:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    115: */
+=>  116:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    117:     //$unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    118:     }
+
+# 2 0x0042B608 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (15):
+
+     13: 
+     14: 
+=>   15:     RunTest ();
+     16:     }
+     17: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int StrInStr(const char*, const char*) at C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp (60):
+
+     58:             cout << Ps << "\n";
+     59: 
+=>   60:             while (!(txGetAsyncKeyState (VK_ESCAPE))) {};
+     61: 
+     62:             if (Ps[i] == Str [last - i])
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 18:54:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 18:54:10
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B6CA в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 62. Попытка прочесть данные по адресу 0x89CADF9E. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0x3AA0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B6CA in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (62):
+
+     60: 
+     61: 
+=>   62:             if (Ps[i] == Str [last - i])
+     63:             {
+     64: 
+
+# 1 0x0042B74F in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (116):
+
+    114:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    115: */
+=>  116:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    117:     //$unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    118:     }
+
+# 2 0x0042B574 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (15):
+
+     13: 
+     14: 
+=>   15:     RunTest ();
+     16:     }
+     17: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 19:00:29, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 19:00:39
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042B6CA в функции StrInStr() в файле C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp на строке 62. Попытка прочесть данные по адресу 0x89CADF9E. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0x3AA0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042B6CA in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (62):
+
+     60: 
+     61: 
+=>   62:             if (Ps[i] == Str [last - i])
+     63:             {
+     64: 
+
+# 1 0x0042B74F in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (116):
+
+    114:     $unittest (StrInStr("1234567890","123412345678902"),  4);
+    115: */
+=>  116:     $unittest (StrInStr("ABACA","ABACABADABACABA"),  0);
+    117:     //$unittest (StrInStr("BACA","ABACABADABACABA"),  1);
+    118:     }
+
+# 2 0x0042B574 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (15):
+
+     13: 
+     14: 
+=>   15:     RunTest ();
+     16:     }
+     17: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-03-07 17:41:13 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May  7 2020 19:00:29, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 07 2020 19:00:39
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------
