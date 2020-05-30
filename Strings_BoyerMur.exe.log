@@ -520,3 +520,56 @@ Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
 Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe, файл: C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.cpp, строка: 111, функция: int StrInStr(const char*, const char*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "0 <= Str[i + start] && Str[i + start] <256".
+
+#1: TXLib [Ver: 00173a, Rev: 166, Date: 2020-04-30 18:19:23 +0400], Instance: 0x005122F4 (32-bit), Flags: Cmdre0, Thread: 0x2648 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C7E8 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: StrInStr() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (111):
+
+    109: 
+    110:                 assert (0 <= i + start && i + start < LenStr);
+=>  111:                 assert (0 <= Str[i + start] && Str[i + start] <256);
+    112: 
+    113:                 if (SdvigArr [ Str[i + start] ] !=0)
+
+# 1 0x0042C8D4 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: RunTest() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (195):
+
+    193:     $unittest (StrInStr ("DABA", "ABACABADABCCABADABAABACACD"), 15);
+    194: */
+=>  195:     $unittest (StrInStr ("при", "Василий, привет!"), 9);
+    196:     $unittest (StrInStr ("ЛИЦ", "ПОЛИЦИЯ"), 2);
+    197: 
+
+# 2 0x0042C463 in C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe: main() at C:/Users/Елена/Documents/GitHub/Algoritms/Strings_BoyerMur.cpp (25):
+
+     23: #endif
+     24: 
+=>   25:     RunTest ();
+     26:     }
+     27: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 166, Date: 2020-04-30 18:19:23 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Work\Дистрибутивы\программирование\KPK-DED\TX\TXLib.h
+Compiled:	May 30 2020 01:42:40, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 30 2020 01:42:51
+
+Run file:	C:\Users\Елена\Documents\GitHub\Algoritms\Strings_BoyerMur.exe
+Directory:	C:\Users\Елена\Documents\GitHub\Algoritms
+
+--------------------------------------------------

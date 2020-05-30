@@ -1,6 +1,10 @@
+#define DEBUG
+//#define NDEBUG
+
 #include "TXLib.h"
-//#include <iostream>
+#include <iostream>
 #include <string>
+
 
 
 void RunTest  ();
@@ -11,9 +15,17 @@ void Spaces (int Count);
 int main()
     {
 
+#ifndef NDEBUG
+
+    printf ("0123456789\n");
+
+
+#endif
 
     RunTest ();
     }
+
+#if 1
 
 void Spaces (int Count)
 {
@@ -27,15 +39,16 @@ void Spaces (int Count)
 int StrInStr(const char Ps[], const char Str[])
     {
     //int number = -1;
-
     int LenPs = LenS(Ps);
     int LenStr = LenS(Str);
     int  SdvigArr [256] = {};
 
-// печать
+#ifdef DEBUG
+
     printf ("0123456789\n");
     printf ("%s \n\n", Ps);
 
+#endif
 
 
     // заполнить массив сдвигов максимальными значени€ми
@@ -53,7 +66,7 @@ int StrInStr(const char Ps[], const char Str[])
 
     }
 
-// печать
+#ifdef DEBUG
     printf ("таблица сдвигов \n");
     printf ("%s \n", Ps);
     for (int i = 0; i < LenPs; i++)
@@ -70,31 +83,35 @@ int StrInStr(const char Ps[], const char Str[])
         for (int j = 0; j<10; j++)
             printf ("%u", j);
     printf ("\n%s\n", Str);
-// конец блока печати
+#endif
 
     int start = 0;
     while (start + LenPs <= LenStr)
     {
 
         bool finds = true;
+#ifdef DEBUG
 
-        // печать
         Spaces (start);
         printf ("%s\n", Ps);
-        // конец блока печати
+#endif
 
         for (int i = LenPs - 1; i >= 0; i--)
         {
-            // печать
+#ifdef DEBUG
             Spaces (start+i);
             printf("^\n");
-            // конец блока печати
+#endif
 
             if (Str[i + start] != Ps[i])
             {
-                int code = (unsigned char) Str[i + start];
-                if (SdvigArr [code ] !=0)
-                    start = start + SdvigArr [code];
+                //int code = (unsigned char) Str[i + start];
+
+                assert (0 <= i + start && i + start < LenStr);
+                assert (0 <= Str[i + start] && Str[i + start] <256);
+
+                if (SdvigArr [ Str[i + start] ] !=0)
+                    start = start + SdvigArr [Str[i + start]];
                 else start++;
 
                 finds = false;
@@ -119,7 +136,7 @@ int StrInStr(const char Ps[], const char Str[])
 void RunTest ()
     {
 
-
+    /*
     $unittest (StrInStr("", "abc"),      0);
 
     $unittest (StrInStr("a", "abc"),     0);
@@ -174,7 +191,7 @@ void RunTest ()
     $unittest (StrInStr ("DABA", "ABACABADABCCABADABADABA"), 15);
 
     $unittest (StrInStr ("DABA", "ABACABADABCCABADABAABACACD"), 15);
-
+*/
     $unittest (StrInStr ("при", "¬асилий, привет!"), 9);
     $unittest (StrInStr ("Ћ»÷", "ѕќЋ»÷»я"), 2);
 
@@ -229,3 +246,4 @@ int LenS (const char Str[])
     return d;
     }
 
+ #endif
